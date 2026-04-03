@@ -1,0 +1,49 @@
+[
+  {
+    "name": "fetch_arbitrum_contract_source",
+    "description": "Fetches the verified Solidity source code and ABI of a smart contract on Arbitrum Sepolia. Use this BEFORE auditing a contract for security risks.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "contractAddress": {
+          "type": "string",
+          "description": "The Ethereum address of the smart contract to fetch source code for"
+        }
+      },
+      "required": ["contractAddress"]
+    }
+  },
+  {
+    "name": "simulate_arbitrum_transaction",
+    "description": "Simulates an Arbitrum transaction using Tenderly's advanced execution tracing API to detect reverts, MEV risks, or honeypots with precise failure analysis. NEVER advise a user to execute a trade without simulating it first.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "txPayload": {
+          "type": "object",
+          "description": "Transaction payload containing all necessary fields for simulation",
+          "properties": {
+            "to": {
+              "type": "string",
+              "description": "The target contract address"
+            },
+            "data": {
+              "type": "string",
+              "description": "The transaction data/calldata"
+            },
+            "value": {
+              "type": "string",
+              "description": "The ETH value to send (in wei)"
+            },
+            "from": {
+              "type": "string",
+              "description": "The sender address"
+            }
+          },
+          "required": ["to", "data", "value", "from"]
+        }
+      },
+      "required": ["txPayload"]
+    }
+  }
+]
