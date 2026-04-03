@@ -40,7 +40,7 @@ A critical security layer for AI agents operating on Arbitrum, providing real-ti
 ```bash
 # Clone and install dependencies
 git clone <repository-url>
-cd TrxnGurdian
+cd TrxnGuardian
 npm install
 
 # Configure environment variables
